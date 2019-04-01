@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: aka
 # @Date:   2019-03-16 20:17:28
-# @Last Modified by:   aka
-# @Last Modified time: 2019-03-16 21:22:39
+# @Last Modified by:   AKA
+# @Last Modified time: 2019-04-01 21:56:15
 # @Email: tenag_hirmb@hotmail.com
 import numpy as np
 
@@ -22,3 +22,8 @@ def bipolar_sigmoid(net):
 def bipolar_sigmoid_derivative(net):
     out = bipolar_sigmoid(net)
     return 0.5 * (1 - out * out)
+
+
+def sigmoid(net):
+    e_to_the_negative_xth_power = pow(np.e, -net)
+    return 1 / (1 + e_to_the_negative_xth_power)
