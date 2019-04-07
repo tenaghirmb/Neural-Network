@@ -13,6 +13,9 @@ import numpy as np
 
 
 def main():
+    epochs = 1
+    mini_batch_size = 1
+    eta = 1  # learning rate
     V0 = np.array([[1, -2], [2, 0]])
     W0 = np.array([[1, 0], [1, -2]])
     d = np.array([[0.95, 0.05]]).T
@@ -21,7 +24,7 @@ def main():
     bo = np.array([[2], [-3]])
 
     network = BPNN([2, 2, 2], [by, bo], [V0, W0])
-    network.SGD([(X, d)], 1, 1, 1)
+    network.SGD([(X, d)], epochs, mini_batch_size, eta)
 
 
 if __name__ == '__main__':
